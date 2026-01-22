@@ -1,0 +1,46 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+}
+
+const { title = "Werving Index" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="The Right People For The Right Job" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body class="bg-[#F8F9FA] text-[#1A2E22] min-h-screen flex flex-col font-['Inter']">
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+    :root {
+        --brand-bg: #F8F9FA;
+        --brand-text: #1A2E22;
+        --brand-muted: #64748B;
+        --brand-accent: #95E388;
+        --brand-accent-hover: #7ED370;
+        --brand-border: #E2E8F0;
+        --brand-surface: #FFFFFF;
+    }
+    
+    .glass-panel {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+</style>

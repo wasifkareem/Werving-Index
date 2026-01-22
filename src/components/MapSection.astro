@@ -1,0 +1,106 @@
+---
+---
+<section class="py-24 border-y border-[#E2E8F0]/50 relative overflow-hidden bg-[#F8F9FA]">
+    <!-- Background Gradient -->
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#F8F9FA]/50 pointer-events-none"></div>
+  
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#1A2E22] mb-6">Starting local in Lancashire.</h2>
+      <p class="text-xl text-[#64748B] max-w-2xl mx-auto mb-16 font-light">
+        We’re building the index town by town. Expanding across the UK next.
+      </p>
+  
+      <div class="relative w-full max-w-5xl mx-auto aspect-[16/9] bg-white rounded-[2.5rem] border border-[#E2E8F0] shadow-sm overflow-hidden group select-none">
+        <!-- Dotted Background Grid -->
+        <div class="absolute inset-0" style="background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px); background-size: 24px 24px; opacity: 0.3;"></div>
+  
+        <!-- Interactive Map Container -->
+        <div class="absolute inset-0 w-full h-full">
+          <svg viewBox="0 0 800 900" class="w-full h-full drop-shadow-sm" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="5" result="blur"></feGaussianBlur>
+                <feComposite in="SourceGraphic" in2="blur" operator="over"></feComposite>
+              </filter>
+            </defs>
+  
+            <!-- Lancashire Map Outline -->
+            <path d="
+              M310 40
+              L420 20
+              L500 60
+              L560 130
+              L610 160
+              L640 210
+              L660 280
+              L700 330
+              L690 380
+              L720 450
+              L700 520
+              L650 560
+              L620 610
+              L590 650
+              L540 690
+              L500 720
+              L460 760
+              L420 780
+              L370 800
+              L330 780
+              L300 740
+              L260 700
+              L220 660
+              L180 620
+              L140 580
+              L120 520
+              L100 460
+              L120 400
+              L150 350
+              L170 300
+              L200 260
+              L230 220
+              L260 180
+              L290 140
+              L300 100
+              Z
+            " class="fill-transparent stroke-[#E2E8F0] stroke-[1.5]"></path>
+  
+            <!-- Town Markers (Dots) -->
+            <!-- Lancaster (North) -->
+            <g class="group/town cursor-pointer">
+              <circle cx="300" cy="150" r="5" class="fill-[#1A2E22]"></circle>
+              <text x="300" y="130" text-anchor="middle" class="fill-[#64748B] text-[11px] font-bold uppercase tracking-widest">Lancaster</text>
+            </g>
+  
+            <!-- Blackpool (West Coast) -->
+            <g class="group/town cursor-pointer">
+              <circle cx="120" cy="460" r="5" class="fill-[#1A2E22]"></circle>
+              <text x="120" y="440" text-anchor="middle" class="fill-[#64748B] text-[11px] font-bold uppercase tracking-widest">Blackpool</text>
+            </g>
+  
+            <!-- Preston (Central Hub) -->
+            <g class="group/town cursor-pointer">
+              <circle cx="300" cy="500" r="6" class="fill-[#95E388]"></circle>
+              <!-- Label -->
+              <g transform="translate(300, 460)">
+                <rect x="-40" y="-24" width="80" height="24" rx="12" class="fill-[#1A2E22] shadow-lg"></rect>
+                <text x="0" y="-8" text-anchor="middle" dominant-baseline="middle" class="fill-white text-[10px] font-bold uppercase tracking-widest">Preston</text>
+                <path d="M-4,-2 L0,4 L4,-2 Z" class="fill-[#1A2E22]" transform="translate(0, 2)"></path>
+              </g>
+            </g>
+  
+            <!-- Blackburn (East of Preston) -->
+            <g class="group/town cursor-pointer">
+              <circle cx="450" cy="520" r="5" class="fill-[#1A2E22]"></circle>
+              <text x="450" y="500" text-anchor="middle" class="fill-[#64748B] text-[11px] font-bold uppercase tracking-widest">Blackburn</text>
+            </g>
+  
+            <!-- Burnley (Far East) -->
+            <g class="group/town cursor-pointer">
+              <circle cx="550" cy="480" r="5" class="fill-[#1A2E22]"></circle>
+              <text x="550" y="460" text-anchor="middle" class="fill-[#64748B] text-[11px] font-bold uppercase tracking-widest">Burnley</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
