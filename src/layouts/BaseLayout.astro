@@ -1,27 +1,116 @@
 ---
+import '@fontsource-variable/inter';
+import '@fontsource/instrument-serif';
+import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 
 interface Props {
 	title?: string;
+	description?: string;
+	keywords?: string;
+	ogImage?: string;
+	ogType?: string;
+	canonicalURL?: string;
 }
 
-const { title = "Werving Index" } = Astro.props;
+const { 
+	title = "Werving Index - Lancashire Recruitment | Find Jobs & Workers Fast",
+	description = "Connect with ready-to-work people in Lancashire instantly. No long forms, no waiting. Find jobs or hire workers today with Werving Index - The Right People For The Right Job.",
+	keywords = "Lancashire jobs, recruitment Lancashire, find workers Lancashire, job seekers Lancashire, Preston jobs, employment Lancashire, hire staff Lancashire, job matching, quick recruitment",
+	ogImage = "/og-image.png",
+	ogType = "website",
+	canonicalURL = new URL(Astro.url.pathname, Astro.site).href
+} = Astro.props;
+
+const siteURL = Astro.site || "https://wervingindex.com";
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="The Right People For The Right Job" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<!-- Preconnect to external domains -->
+		<link rel="preconnect" href="https://tally.so" />
+		<link rel="dns-prefetch" href="https://tally.so" />
+		
+		<!-- Primary Meta Tags -->
 		<title>{title}</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="author" content="Werving Index" />
+		<meta name="robots" content="index, follow" />
+		<meta name="language" content="English" />
+		<meta name="revisit-after" content="7 days" />
+		
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalURL} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content={ogType} />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(ogImage, siteURL).href} />
+		<meta property="og:site_name" content="Werving Index" />
+		<meta property="og:locale" content="en_GB" />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL(ogImage, siteURL).href} />
+		
+		<!-- Favicon -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="apple-touch-icon" href="/favicon.svg" />
+		
+		<!-- Generator -->
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Structured Data - Organization -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "Werving Index",
+			"description": "Lancashire's fastest recruitment platform connecting workers and employers",
+			"url": "{siteURL}",
+			"logo": "{new URL('/favicon.svg', siteURL).href}",
+			"contactPoint": {
+				"@type": "ContactPoint",
+				"contactType": "Customer Service",
+				"areaServed": "GB",
+				"availableLanguage": "English"
+			},
+			"areaServed": {
+				"@type": "Place",
+				"name": "Lancashire, United Kingdom"
+			}
+		}
+		</script>
+		
+		<!-- Structured Data - WebSite -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": "Werving Index",
+			"url": "{siteURL}",
+			"description": "Find jobs and workers in Lancashire instantly",
+			"potentialAction": {
+				"@type": "SearchAction",
+				"target": "{siteURL}/search?q={search_term_string}",
+				"query-input": "required name=search_term_string"
+			}
+		}
+		</script>
+		<ClientRouter />
 	</head>
-	<body class="bg-[#F8F9FA] text-[#1A2E22] min-h-screen flex flex-col font-['Inter']">
+	<body class="bg-[#F8F9FA] text-[#1A2E22] min-h-screen flex flex-col font-sans">
 		<slot />
 	</body>
 </html>
@@ -35,6 +124,14 @@ const { title = "Werving Index" } = Astro.props;
         --brand-accent-hover: #7ED370;
         --brand-border: #E2E8F0;
         --brand-surface: #FFFFFF;
+    }
+
+    body {
+        font-family: 'Inter Variable', sans-serif;
+    }
+
+    .font-serif {
+        font-family: 'Instrument Serif', serif;
     }
     
     .glass-panel {

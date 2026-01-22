@@ -1,31 +1,12 @@
 ---
+import Logo from './Logo.astro';
 ---
 <footer class="bg-[#F8F9FA] border-t border-[#E2E8F0] pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
         <div class="col-span-2 md:col-span-1">
           <a href="/" class="mb-4 block hover:opacity-80 transition-opacity">
-            <div class="flex items-center gap-3 ">
-              <!-- Logo Icon -->
-              <div class="relative">
-                <!-- Outer green circle -->
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="drop-shadow-sm">
-                  <!-- Outer ring -->
-                  <circle cx="24" cy="24" r="22" fill="#95E388" opacity="0.3"></circle>
-                  <circle cx="24" cy="24" r="18" fill="#1A2E22"></circle>
-                  <!-- W letter -->
-                  <text x="24" y="32" text-anchor="middle" fill="white" font-size="24" font-weight="700" font-family="Inter, system-ui, sans-serif">W</text>
-                  <!-- Arrow up -->
-                  <path d="M24 12 L28 16 L26 16 L26 20 L22 20 L22 16 L20 16 Z" fill="#95E388"></path>
-                  <!-- Yellow dot accent -->
-                  <circle cx="36" cy="12" r="4" fill="#FFC107"></circle>
-                </svg>
-              </div>
-              <div class="flex flex-col gap-1">
-                <span class="text-xl font-bold tracking-tight text-[#1A2E22] leading-none">Werving Index</span>
-                <span class="text-xs text-[#64748B] uppercase tracking-wider">The Right People For The Right Job</span>
-              </div>
-            </div>
+            <Logo />
           </a>
           <p class="text-sm text-[#64748B] leading-relaxed mt-4">
             The live labor index for Lancashire. <br>
